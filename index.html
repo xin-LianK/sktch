@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sketch">
+<head>
+  <meta charset="UTF-8">
+  <title>Sketch</title>
+  <script src="js/angular.js"></script>
+  <script src="js/index.js"></script>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body ng-controller="sketchController">
+
+  <div id="controls">
+    <div ng-repeat="(key, value) in tools" ng-class="{active:value==tool}" ng-click="setTool(value)">
+      <span>{{key}}</span>
+    </div>
+    <hr>
+    <div ng-class="{active:csState.style=='fill'}" ng-click="setStyle('fill')">填充</div>
+    <input type="color" ng-model="csState.fillStyle">
+    <div ng-class="{active:csState.style=='stroke'}" ng-click="setStyle('stroke')">画线</div>
+    <input type="color" ng-model="csState.strokeStyle">
+    <hr>
+    <div>
+      线宽
+      <input ng-model="csState.lineWidth" type="range" min="1" max="30" step="1">
+    </div>
+    <hr>
+    <a ng-click="newSketch($event)">新建</a>
+    <a ng-click="save($event)">保存</a>
+    <a ng-mouseup="$event.stopPropagation()" ng-click="undo($event)">回退</a>
+  </div>
+
+  <div id="drawregion">
+    <canvas id="canvas" width="{{wh[0]}}" height="{{wh[1]}}"></canvas>
+  </div>
+
+</body>
+</html>

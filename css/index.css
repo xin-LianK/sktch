@@ -1,0 +1,54 @@
+body{
+	margin:0;
+	font-family: Arial;
+	background: url(../imgs/packed-4.png);
+}
+#controls{
+	width:300px;
+	position: absolute;
+  box-sizing: border-box;
+  padding: 80px;
+	top:0;
+	bottom:0;
+	background: #383836;
+	color:white;
+}
+#drawregion{
+	position: absolute;
+	left:300px;
+	right:0;
+	top:0;
+	bottom:0;
+  min-width: 800px;
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+#canvas{
+	box-shadow: 0 0 1px black;
+	display: block;
+	margin:20px auto;
+}
+.active{
+	color:orange;
+}
+input[type=color]{
+  display: block;
+  width: 60px;
+  height: 30px;
+  border-radius: 50%;
+  margin:5px 0;
+  border:1px solid #383836;
+  outline: none;
+  border-image: none;
+  background-color: #383836;
+}
+hr{
+  border:none;
+  border-top: 1px solid white;
+  margin:20px 0;
+}
+*{
+	cursor:pointer;
+}
